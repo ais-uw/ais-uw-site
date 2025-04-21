@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+:root {
+    --spacing: 0.5rem;
+}

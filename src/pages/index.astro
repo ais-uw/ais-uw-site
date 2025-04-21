@@ -1,0 +1,377 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+import seattle from "../assets/illustration/seattle-square.png";
+import discord from "../assets/illustration/discord.png";
+import books from "../assets/illustration/books.png";
+import maze from "../assets/illustration/maze.png";
+import researcher from "../assets/illustration/researcher.png";
+import discuss from "../assets/illustration/discuss.png";
+import resources from "../assets/illustration/resources.png";
+---
+
+<Layout>
+    <Section>
+        <div
+            class="flex gap-6 items-center flex-col-reverse md:flex-row md:gap-8"
+        >
+            <div class="flex-auto">
+                <h1 class="text-3xl/4 md:text-4xl/6">
+                    <p class="mb-2 md:mb-4">
+                        AI Safety at University of Washington is a
+                        community of students working to shape the future of
+                        artificial intelligence.
+                    </p>
+                    <p class="text-xl/4 mb-2 md:text-2xl/4 md:mb-4">
+                        Whether you're studying computer science, philosophy,
+                        political science, or simply curious about AI's future,
+                        you're invited to join the conversation—and help make an
+                        impact.
+                    </p>
+                </h1>
+
+                <div class="mt-8">
+                    <Button href="/#get-involved" size="lg">Get Involved</Button
+                    >
+                </div>
+            </div>
+
+            <Image
+                class="seattle rounded-xl aspect-5/2 flex-none md:aspect-3/4"
+                src={seattle}
+                alt="Seattle Skyline"
+                layout="responsive"
+                format="webp"
+                fit="cover"
+                loading="lazy"
+                width={1000}
+                height={1000}
+            />
+        </div>
+    </Section>
+
+    <Section id="get-involved" class="bg-purple-500 text-white" hasbg>
+        <h2 class="text-center text-4xl mb-2">Get Involved</h2>
+        <p class="text-center text-lg mb-6 max-w-3xl mx-auto">
+            We're always looking for new members to help us shape the future of
+            AI safety. Right now there are two main ways to get involved.
+        </p>
+        <div class="flex flex-col justify-center gap-5 md:flex-row mb-2">
+            <Card>
+                <Image
+                    src={discord}
+                    alt="Discord"
+                    class="max-w-20 rounded-full mx-auto mb-4"
+                />
+                <h3 class="text-2xl mb-2">
+                    Join our Discord to become a club member
+                </h3>
+                <p class="mb-6">
+                    The AI Safety Club is open to all students at the University
+                    of Washington. Join our Discord to ask questions, get news
+                    and announcements, and meet other students interested in AI
+                    safety.
+                </p>
+
+                <Button>Join Discord</Button>
+            </Card>
+            <Card>
+                <Image
+                    src={books}
+                    alt="Discussion Group"
+                    class="max-w-20 rounded-full mx-auto mb-4"
+                />
+                <h3 class="text-2xl mb-2">
+                    Join our Intro to Technical AI Safety Discussion Group
+                </h3>
+                <p class="mb-6">
+                    This is a discussion group for students who are interested
+                    in technical AI safety. We meet once a week to discuss a
+                    series of articles designed to introduce you to the field.
+                </p>
+
+                <Button>Learn More</Button>
+            </Card>
+        </div>
+    </Section>
+
+    <Section id="what-is-ai-safety">
+        <h2 class="text-center text-4xl mb-4">What is AI Safety?</h2>
+
+        <div class="prose max-w-120 text-lg mx-auto mb-4">
+            <p class="text-2xl">
+                AI Safety is the field of study focused on ensuring that
+                artificial intelligence systems—especially the powerful ones we
+                may see in the near future—do what we want them to do.
+                <Image
+                    src={maze}
+                    alt="Maze"
+                    class="rounded-full float-out-right"
+                />
+            </p>
+            <p>
+                It's about aligning AI with human values, preventing unintended
+                consequences, and building systems that we can trust as they
+                grow more capable. Whether you're into technical research,
+                philosophy, policy, or just curious about where the future is
+                headed, there's a place for you here.
+            </p>
+            <p>
+                This isn't just about worrying over dystopian sci-fi scenarios.
+                AI Safety is a rapidly growing field with prominent researchers
+                at places like OpenAI, Anthropic, DeepMind, and leading
+                universities around the world. They're working on questions
+                like: How do we train AI systems to be honest? How can we test
+                if an AI really understands what it's doing? What's the best way
+                to govern AI development responsibly? It's exciting, dynamic
+                work—and much of it is still being figured out.
+            </p>
+
+            <p>
+                The AI Safety community is full of thoughtful, welcoming people
+                who are trying to tackle one of the most important challenges of
+                our generation. You don't need to be an expert to start getting
+                involved—just curious and motivated to make a difference. If you
+                care about the future of technology, ethics, or humanity itself,
+                there's never been a better time to jump in.
+            </p>
+
+            <Image
+                src={discuss}
+                alt="Gather"
+                class="discuss rounded-xl"
+                format="webp"
+                fit="cover"
+                loading="lazy"
+                height={1000}
+            />
+
+        </div>
+    </Section>
+
+    <Section id="resources" class="bg-gold-200" hasbg id="resources">
+        <div class="flex gap-8">
+            <div>
+                <h2 class="text-left text-3xl mb-4">Resources</h2>
+                <p class="text-xl mb-6">
+                    Wondering where to jump in? Here is a list of resources to
+                    help you get started.
+                </p>
+
+                <div class="resources-list">
+                    <a
+                        href="https://www.youtube.com/watch?v=pYXy-A4siMw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <em>Video</em>
+                        <strong>Intro to AI Safety</strong>
+                        <span class="text-sm">
+                            Video by Rob Miles that introduces core AI safety
+                            concepts like alignment, instrumental convergence,
+                            and existential risk.
+                        </span>
+                    </a>
+
+                    <a
+                        href="https://ai-2027.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <em>Feature</em>
+                        <strong>AI 2027</strong>
+                        <span class="text-sm">
+                            A scenario-based forecast exploring plausible
+                            developments in AI by 2027, highlighting risks and
+                            strategic challenges.
+                        </span>
+                    </a>
+
+                    <a
+                        href="https://www.lesswrong.com/w/ai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <em>Site</em>
+                        <strong>LessWrong</strong>
+                        <span class="text-sm">
+                            Hub for essays and discussions on AI alignment,
+                            risk, and rational decision-making.
+                        </span>
+                    </a>
+
+                    <a
+                        href="https://www.alignmentforum.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <em>Site</em>
+                        <strong>AI Alignment Forum</strong>
+                        <span class="text-sm">
+                            Research-focused platform for technical discussions
+                            on AI alignment and safety.
+                        </span>
+                    </a>
+
+                    <a
+                        href="https://www.cold-takes.com/why-would-ai-aim-to-defeat-humanity/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <em>Article</em>
+                        <strong>Why Would AI "Aim" To Defeat Humanity?</strong>
+                        <span class="text-sm">
+                            An essay on how advanced AI systems might develop
+                            misaligned goals leading to catastrophic outcomes.
+                        </span>
+                    </a>
+
+                    <a
+                        href="https://brianchristian.org/the-alignment-problem/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <em>Book</em>
+                        <strong>The Alignment Problem by Brian Christian</strong
+                        >
+                        <span class="text-sm">
+                            A narrative-driven exploration of aligning machine
+                            learning systems with human values, featuring
+                            real-world examples.
+                        </span>
+                    </a>
+
+                    <a
+                        href="https://www.amazon.com/Human-Compatible-Artificial-Intelligence-Problem/dp/0525558616"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <em>Book</em>
+                        <strong>Human Compatible by Stuart Russell</strong>
+                        <span class="text-sm">
+                            A foundational book that advocates designing AI
+                            systems explicitly to remain under human control.
+                        </span>
+                    </a>
+
+                    <a
+                        href="https://www.amazon.com/Superintelligence-Dangers-Strategies-Nick-Bostrom/dp/0198739834"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <em>Book</em>
+                        <strong>Superintelligence by Nick Bostrom</strong>
+                        <span class="text-sm">
+                            A deep dive into the future of artificial general
+                            intelligence and the strategies for mitigating its
+                            existential risks.
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <Image
+                src={resources}
+                alt="Resources"
+                class="resources rounded-xl max-w-40"
+                format="webp"
+                fit="cover"
+                loading="lazy"
+                width={600}
+            />
+        </div>
+    </Section>
+    <Section id="safety" hasbg class="bg-gold-50">
+        <div class="flex gap-8 items-center">
+            <Image
+                src={researcher}
+                alt="Researcher"
+                class="researcher rounded-full max-w-30"
+                format="webp"
+            />
+            <div>
+                <h2 class="text-center text-4xl mb-4">Contact</h2>
+                <p class="text-center text-lg mb-4 max-w-3xl mx-auto">
+                    Have questions? Want to get involved? We'd love to hear from
+                    you. You can <a href="#">join our Discord</a> or send email to
+                    <a href="mailto:aisafetyudub@gmail.com"
+                        >aisafetyudub@gmail.com</a
+                    >.
+                </p>
+            </div>
+        </div>
+    </Section>
+
+    <style>
+        @import "tailwindcss";
+        @config "../../tailwind.config.js";
+
+        .seattle {
+            object-fit: cover;
+            object-position: 80% 20%;
+            max-height: 36rem;
+            width: auto;
+        }
+
+        .discuss {
+            object-fit: cover !important;
+            object-position: 40% 50%;
+            aspect-ratio: 4/2;
+
+            width: 100%;
+            max-width: 36rem;
+            margin-left: -5rem;
+            height: auto;
+            margin-top: 4rem;
+            margin-bottom: -2rem;
+        }
+
+        .resources {
+            object-fit: contain;
+            object-position: 20% 50%;
+            width: 100%;
+        }
+
+        .resources-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+            gap: 1rem;
+
+            a {
+                background-color: white;
+                display: block;
+                padding: 1rem;
+                @apply rounded-lg;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                border: 2px solid white;
+                transition: all 0.15s ease;
+                &:hover {
+                    border-color: var(--gold);
+                    @apply shadow-lg;
+                }
+            }
+
+            em {
+                display: block;
+                font-size: 0.6rem;
+                font-weight: 600;
+
+                text-transform: uppercase;
+                font-style: normal;
+                @apply bg-purple-800 text-white;
+                border-radius: 0.3em;
+                padding: 0.4em 0.75em 0.3em;
+                line-height: 1;
+                margin: 0 auto 0.66rem;
+            }
+            span {
+                display: block;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</Layout>

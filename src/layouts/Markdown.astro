@@ -1,0 +1,17 @@
+---
+import "../styles/tailwind.css";
+import "../styles/global.scss";
+import Head from "../components/Head.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <Head />
+    <body>
+        <Nav />
+        <main class="container prose">
+            <slot />
+        </main>
+    </body>
+</html>

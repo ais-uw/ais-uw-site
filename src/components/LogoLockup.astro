@@ -1,0 +1,29 @@
+---
+import LogoSvg from "./LogoSvg.astro";
+---
+
+<span class="logo-lockup">
+    <div class="logo">
+        <LogoSvg />
+    </div>
+    <span>
+        AI Safety at University of Washington
+
+    </span>
+</span>
+
+<style lang="scss">
+    .logo-lockup {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        font-size: inherit;
+        line-height: 1.25;
+        font-weight: 500;
+    }
+
+    .logo {
+        height: auto;
+        width: 3.5em;
+    }
+</style>

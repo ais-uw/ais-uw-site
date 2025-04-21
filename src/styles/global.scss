@@ -1,0 +1,70 @@
+@use "sass:math";
+@function scale-vw($min, $max, $at-width: null) {
+    @return clamp(#{$min}, #{math.div($max, $at-width) * 100vw}, #{$max});
+}
+
+$page-bg: #f5f1eb;
+$page-fg: #262236;
+$page-width: 1320px;
+$page-ff: "Space Grotesk", sans-serif;
+$page-ff-heading: "Space Grotesk", sans-serif;
+
+$purple: #3d325f;
+$gold: #dcbf77;
+
+:root {
+    --page-bg: #f5f1eb;
+    --page-fg: #262236;
+    --purple: #3d325f;
+    --gold: #dcbf77;
+}
+
+html,
+body {
+    font-size: scale-vw(14px, 16px, $page-width);
+    background-color: $page-bg;
+    font-family: $page-ff;
+    color: $page-fg;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90vw;
+    max-width: $page-width;
+    margin-inline: auto;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $page-ff-heading;
+    font-weight: 600;
+}
+
+.float-out-left,
+.float-out-right {
+    border-radius: 50%;
+    max-width: 18rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+    -webkit-shape-outside: circle(50%);
+    shape-outside: circle(50%);
+    float: right;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.float-out-left {
+    float: left;
+    margin-left: -7rem;
+    margin-right: 1rem;
+}
+
+.float-out-right {
+    float: right;
+    margin-right: -7rem;
+    margin-left: 1rem;
+}

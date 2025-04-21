@@ -1,0 +1,42 @@
+---
+
+const { href, target = "", size = "base", class: className = "" } = Astro.props;
+
+type Size = "sm" | "base" | "lg" | "xl";
+const sizeClasses: Record<Size, string> = {
+    sm: "text-sm",
+    base: "text-base",
+    lg: "text-lg",
+    xl: "text-xl",
+};
+---
+
+{
+    href ? (
+        <a
+            class={`button ${sizeClasses[size as Size]} ${className}`}
+            href={href}
+            target={target}
+        >
+            <slot />
+        </a>
+    ) : (
+        <button class={`button ${sizeClasses[size as Size]} ${className}`}>
+            <slot />
+        </button>
+    )
+}
+
+<style is:global>
+    @import "tailwindcss";
+    @config "../../tailwind.config.js";
+
+    .button {
+        @apply text-white bg-primary;
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+        &:hover {
+            background-color: #5c4f80;
+        }
+    }
+</style>

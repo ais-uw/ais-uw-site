@@ -1,0 +1,16 @@
+<div
+    class="card bg-white rounded-xl drop-shadow-lg max-w-md flex-col text-center"
+>
+    <slot />
+</div>
+
+<style>
+    .card {
+        padding: 3rem 2rem 3rem;
+        color: var(--page-fg);
+
+        @media (max-width: 768px) {
+            padding: 1.5rem;
+        }
+    }
+</style>

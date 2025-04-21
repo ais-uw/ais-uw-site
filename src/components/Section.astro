@@ -1,0 +1,31 @@
+---
+const {
+    id = "",
+    stretch = false,
+    hasbg = false,
+    class: className,
+} = Astro.props;
+---
+
+<section id={id} class={`${stretch ? className : ""} section`}>
+    <div
+        class={`${!stretch ? className : ""} ${hasbg ? "has-bg" : ""} container`}
+    >
+        <slot />
+    </div>
+</section>
+
+<style>
+    @import "tailwindcss";
+    @config "../../tailwind.config.js";
+
+    .section {
+        margin-bottom: 6rem;
+    }
+
+    .has-bg {
+        @apply rounded-xl;
+        padding-inline: 4rem;
+        padding-block: 4rem;
+    }
+</style>

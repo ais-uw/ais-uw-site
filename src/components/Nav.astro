@@ -1,0 +1,39 @@
+---
+import LogoLockup from "./LogoLockup.astro";
+---
+
+<nav class="nav container mt-3">
+    <a class="home text-xl" href="/">
+        <LogoLockup />
+    </a>
+    <ul class="links">
+        <li><a href="/#get-involved">Get Involved</a></li>
+        <li><a href="/about">Discussion Group</a></li>
+        <li><a href="/contact">What is AI Safety?</a></li>
+        <li><a href="/about">Resources</a></li>
+        <li><a href="/about">Contact</a></li>
+    </ul>
+</nav>
+
+<style lang="scss">
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    .links {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+    }
+
+    .nav,
+    .links {
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+</style>
