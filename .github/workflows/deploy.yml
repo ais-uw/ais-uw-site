@@ -1,0 +1,46 @@
+name: Build & deploy Astro to GitHub Pages
+
+on:
+  push:
+    branches: [main] # build on every push to main
+  workflow_dispatch: # manual trigger if you ever need it
+
+# stricter than default; required for Pages deploy
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency: # cancel stale deploys
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Astro 4+ is happy on 18+, 20 is LTS
+          cache: npm
+
+      - run: npm ci # install deps (faster than npm install)
+      - run: npm run build # creates ./dist
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist # default Astro output
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
